@@ -76,6 +76,15 @@ module Senec
         post "#{WALLBOX_HOST}/v1/systems/wallboxes/search", { systemIds: [system_id] }
       end
 
+      def lock_wallbox(system_id, wallbox_id, locked)
+        patch "#{WALLBOX_HOST}/v1/systems/#{system_id}/wallboxes/#{wallbox_id}/locked/#{locked}"
+      end
+
+      def set_wallbox(system_id, wallbox_id, setting, body)
+        lock_wallbox(system_id, wallbox_id, false)
+        post "#{WALLBOX_HOST}/v1/systems/#{system_id}/wallboxes/#{wallbox_id}/settings/#{setting}", body
+      end
+
       private
 
       attr_accessor :oauth_token
@@ -219,7 +228,21 @@ module Senec
         # :nocov:
       end
 
-      def post(url, data)
+      def patch(url, default: nil)
+        ensure_token_valid!
+
+        response = oauth_token.patch(url)
+        return default unless response.status == 200
+
+        JSON.parse(response.body)
+      rescue StandardError => e
+        # :nocov:
+        warn "API error: #{e.message}"
+        default
+        # :nocov:
+      end
+
+      def post(url, data, default: nil)
         ensure_token_valid!
 
         response = oauth_token.post(
