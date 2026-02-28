@@ -55,6 +55,8 @@ FILTERS = {
   personal_data: {
     /username=[^&]+&password=[^&]+/ =>
       'username=FILTERED_EMAIL&password=FILTERED_PASSWORD',
+    /\Ausername=[^&]+\z/ => 'username=FILTERED_EMAIL',
+    /\Apassword=[^&]+\z/ => 'password=FILTERED_PASSWORD',
     /checkAuthSession\(\s*"[^"]+"\s*\)/ => 'checkAuthSession("FILTERED_HASH")',
     **json_string_filters(
       'caseSerialNumber',

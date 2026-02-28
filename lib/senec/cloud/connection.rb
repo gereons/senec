@@ -40,8 +40,8 @@ module Senec
           )
 
         # Manual HTTP needed for Keycloak cross-domain form handling
-        login_form_url = fetch_login_form_url(auth_url)
-        redirect_url = submit_credentials(login_form_url)
+        form_type, form_url = fetch_login_form(auth_url)
+        redirect_url = submit_credentials(form_type, form_url)
         authorization_code = extract_authorization_code(redirect_url)
 
         self.oauth_token =
@@ -80,15 +80,19 @@ module Senec
 
       attr_accessor :oauth_token
 
-      def fetch_login_form_url(auth_url)
+      def fetch_login_form(auth_url)
         response = http_request(:get, auth_url)
         store_cookies(response) # Required for Keycloak CSRF protection
-        extract_login_form_action_url(response.body) || raise('Login form not found')
+        detect_login_form(response.body) || raise('Login form not found')
       end
 
-      def submit_credentials(form_url)
-        credentials = { username:, password: }
-        response = http_request(:post, form_url, data: credentials)
+      def submit_credentials(form_type, form_url)
+        case form_type
+        when :username_and_password
+          response = http_request(:post, form_url, data: { username:, password: })
+        when :username_only
+          response = submit_username_then_password(form_url)
+        end
 
         if response.status == 200
           # Check if MFA is required
@@ -108,6 +112,20 @@ module Senec
         handle_redirect_response(response)
       end
 
+      def submit_username_then_password(form_url)
+        response = http_request(:post, form_url, data: { username: })
+        store_cookies(response)
+
+        raise 'Password form not found' unless response.status == 200
+
+        password_form_url = find_form_action_url(response.body) do |f|
+          f.match(/name=["']?password["']?/i)
+        end
+        raise 'Password form not found' unless password_form_url
+
+        http_request(:post, password_form_url, data: { username:, password: })
+      end
+
       def submit_totp_form(form_url)
         totp = build_totp_from_uri(totp_uri)
 
@@ -124,12 +142,21 @@ module Senec
         params['code'] || raise('No authorization code found')
       end
 
-      def extract_login_form_action_url(html)
-        find_form_action_url(html) do |form|
-          # Look for a form with username and password fields
+      def detect_login_form(html)
+        # Check for combined form first (backward compatible with old SENEC flow)
+        url = find_form_action_url(html) do |form|
           form.match(/name=["']?username["']?/i) &&
             form.match(/name=["']?password["']?/i)
         end
+        return [:username_and_password, url] if url
+
+        # Check for username-only form (new two-step SENEC flow)
+        url = find_form_action_url(html) do |form|
+          form.match(/name=["']?username["']?/i)
+        end
+        return [:username_only, url] if url
+
+        nil
       end
 
       def extract_totp_form_action_url(html)
