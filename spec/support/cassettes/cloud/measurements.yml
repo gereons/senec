@@ -1,0 +1,518 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sso.senec.com/realms/senec/.well-known/openid-configuration
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ruby-senec/0.23.0 (+https://github.com/solectrus/senec)
+      connection:
+      - keep-alive
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 12 Apr 2026 11:37:14 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, must-revalidate, no-transform, no-store
+      referrer-policy:
+      - no-referrer
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-robots-tag:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      report-to:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=v6ifPP3EVd2UJ%2BjnL9YSH7BNmK4chuDS6xppFwfTWrUF8E9jYq4dKrl4JhR8nzy%2BOqyO%2BUqSE0HHlcKAkNYBNm9dIPXpj7Q67JoUiMtKaq5JOSYGq21yjz4u1kmqCWj2"}]}'
+      server:
+      - cloudflare
+      cf-ray:
+      - 9eb1f01829571db0-FRA
+      alt-svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"issuer":"https://sso.senec.com/realms/senec","authorization_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/auth","token_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/token","introspection_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/token/introspect","userinfo_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/userinfo","end_session_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/logout","frontchannel_logout_session_supported":true,"frontchannel_logout_supported":true,"jwks_uri":"https://sso.senec.com/realms/senec/protocol/openid-connect/certs","check_session_iframe":"https://sso.senec.com/realms/senec/protocol/openid-connect/login-status-iframe.html","grant_types_supported":["authorization_code","client_credentials","implicit","password","refresh_token","urn:ietf:params:oauth:grant-type:device_code","urn:ietf:params:oauth:grant-type:token-exchange","urn:ietf:params:oauth:grant-type:uma-ticket","urn:openid:params:grant-type:ciba"],"acr_values_supported":["0","1"],"response_types_supported":["code","none","id_token","token","id_token
+        token","code id_token","code token","code id_token token"],"subject_types_supported":["public","pairwise"],"prompt_values_supported":["none","login","consent"],"id_token_signing_alg_values_supported":["PS384","RS384","EdDSA","ES384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"id_token_encryption_alg_values_supported":["ECDH-ES+A256KW","ECDH-ES+A192KW","ECDH-ES+A128KW","RSA-OAEP","RSA-OAEP-256","RSA1_5","ECDH-ES"],"id_token_encryption_enc_values_supported":["A256GCM","A192GCM","A128GCM","A128CBC-HS256","A192CBC-HS384","A256CBC-HS512"],"userinfo_signing_alg_values_supported":["PS384","RS384","EdDSA","ES384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"userinfo_encryption_alg_values_supported":["ECDH-ES+A256KW","ECDH-ES+A192KW","ECDH-ES+A128KW","RSA-OAEP","RSA-OAEP-256","RSA1_5","ECDH-ES"],"userinfo_encryption_enc_values_supported":["A256GCM","A192GCM","A128GCM","A128CBC-HS256","A192CBC-HS384","A256CBC-HS512"],"request_object_signing_alg_values_supported":["PS384","RS384","EdDSA","ES384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"request_object_encryption_alg_values_supported":["ECDH-ES+A256KW","ECDH-ES+A192KW","ECDH-ES+A128KW","RSA-OAEP","RSA-OAEP-256","RSA1_5","ECDH-ES"],"request_object_encryption_enc_values_supported":["A256GCM","A192GCM","A128GCM","A128CBC-HS256","A192CBC-HS384","A256CBC-HS512"],"response_modes_supported":["query","fragment","form_post","query.jwt","fragment.jwt","form_post.jwt","jwt"],"registration_endpoint":"https://sso.senec.com/realms/senec/clients-registrations/openid-connect","token_endpoint_auth_methods_supported":["private_key_jwt","client_secret_basic","client_secret_post","tls_client_auth","client_secret_jwt"],"token_endpoint_auth_signing_alg_values_supported":["PS384","RS384","EdDSA","ES384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"introspection_endpoint_auth_methods_supported":["private_key_jwt","client_secret_basic","client_secret_post","tls_client_auth","client_secret_jwt"],"introspection_endpoint_auth_signing_alg_values_supported":["PS384","RS384","EdDSA","ES384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"authorization_signing_alg_values_supported":["PS384","RS384","EdDSA","ES384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"authorization_encryption_alg_values_supported":["ECDH-ES+A256KW","ECDH-ES+A192KW","ECDH-ES+A128KW","RSA-OAEP","RSA-OAEP-256","RSA1_5","ECDH-ES"],"authorization_encryption_enc_values_supported":["A256GCM","A192GCM","A128GCM","A128CBC-HS256","A192CBC-HS384","A256CBC-HS512"],"claims_supported":["iss","sub","aud","exp","iat","auth_time","name","given_name","family_name","preferred_username","email","acr","azp","nonce"],"claim_types_supported":["normal"],"claims_parameter_supported":true,"scopes_supported":["openid","meinsenec","bsr-senec-meinsenec","master-data.addon.write","company-employee.forced-diff-sync","vendor.read","sso_forecast_charging_settings","controller.ping.get","credentials-types","basic","sams.user.send-welcome-email","ems-wallbox.measurements.read","installation-product.read","deadletter.publish.write","sams.user.get","sso_forecast_charging_settings_consent","installation.read","user-permission.read","sso_user_save","touchpoint.read","service_account","vendor.forced-full-sync","master-data.admin.write","company-employee.read","installation-product.forced-diff-sync","ems-wallbox.settings.write","hardware-replacement-offer.sync","ems_system.keys.put","addonpackage-adhoc-redemption","installation-company.read","sams.user.update-password","profile","user-training.forced-diff-sync","roles","installation-endcustomer.read","master-data.system.write","italy-user-training.forced-full-sync","sso_restart_doi","master-data.permission.write","ems-wallbox.wallboxes.read","installation-serial.read","error_catalog.ingestion.upload","related-companies","master-data.customer.write","service_partner_s4c_aud","master-data.user.read","ems_system.device.auth-info","controller.ping.post-offline","web-origins","ems-config.read","company-installation.read","deadletter.retry.get","master-data.journal.read","ems-wallbox.capabilities.read","energy-storage.catalog.products.read","ems_system.keys.generate_assignments","controller.onlinestate.get","pricing-forecast.read","installation.forced-diff-sync","installation-company.forced-full-sync","email","portal-support-backend.components.write","ems_system.identities.create","installation-product.forced-full-sync","master-data.document.read","ems_system.device.assign","energy-storage-catalog.products.read","senec_impersonate","configtool_impersonation_token_exchange_aud","deadletter.retry.start","support","company-installation.forced-diff-sync","sams.sync-user-status","controller.controller.get","master-data.notification.read","ems_system.device.create","installation-license.sync","company-installation.forced-full-sync","user-training.read","master-data.system.read","deadletter.inspect.get","user-training.forced-full-sync","master-data.admin.read","master-data.permission.read","pricing-forecast.write","controller.ping.post","master-data.installcompany.read","firmware-rollout.read","italy-user-training.forced-diff-sync","export-job.read","offline_access","master-data.notification.write","master-data.internal.write","ems-wallbox.name.write","sams.user.send-reset-password-email","installation-company.forced-diff-sync","hardware-replacement-offer.read","installation.forced-full-sync","sams.has-logged-in","company-employee.forced-full-sync","microprofile-jwt","ems-maintenance-task.execute","installation-serial.forced-diff-sync","controller.capabilities.get","installation-endcustomer.forced-diff-sync","app_proxy_aud","master-data.document.write","user-permission.forced-full-sync","master-data.journal.write","user-permission.forced-diff-sync","fpp_gateway_aud","installation-location.read","installation-location.sync","sso_set_password","master-data.user.write","sams.user.token-exchange-client-to-user","italy-user-training.read","phone","app_user_token_exchange_aud","master-data.addon.read","deadletter.retry.stop","installation-license.read","ems_system.device.get","master-data.customer.read","address","ems-wallbox.settings.read","installation-add-on.forced-full-sync","installation-serial.forced-full-sync","master-data.installcompany.write","installation-add-on.read","installation-endcustomer.forced-full-sync","acr","vendor.forced-diff-sync","export-job.sync","installation-add-on.forced-diff-sync","federated-identities","sams.update-email","controller.hardware.get"],"request_parameter_supported":true,"request_uri_parameter_supported":true,"require_request_uri_registration":true,"code_challenge_methods_supported":["plain","S256"],"tls_client_certificate_bound_access_tokens":true,"dpop_signing_alg_values_supported":["PS384","RS384","EdDSA","ES384","ES256","RS256","ES512","PS256","PS512","RS512"],"revocation_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/revoke","revocation_endpoint_auth_methods_supported":["private_key_jwt","client_secret_basic","client_secret_post","tls_client_auth","client_secret_jwt"],"revocation_endpoint_auth_signing_alg_values_supported":["PS384","RS384","EdDSA","ES384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"backchannel_logout_supported":true,"backchannel_logout_session_supported":true,"device_authorization_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/auth/device","backchannel_token_delivery_modes_supported":["poll","ping"],"backchannel_authentication_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/ext/ciba/auth","backchannel_authentication_request_signing_alg_values_supported":["PS384","RS384","EdDSA","ES384","ES256","RS256","ES512","PS256","PS512","RS512"],"require_pushed_authorization_requests":false,"pushed_authorization_request_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/ext/par/request","mtls_endpoint_aliases":{"token_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/token","revocation_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/revoke","introspection_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/token/introspect","device_authorization_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/auth/device","registration_endpoint":"https://sso.senec.com/realms/senec/clients-registrations/openid-connect","userinfo_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/userinfo","pushed_authorization_request_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/ext/par/request","backchannel_authentication_endpoint":"https://sso.senec.com/realms/senec/protocol/openid-connect/ext/ciba/auth"},"authorization_response_iss_parameter_supported":true}'
+  recorded_at: Sun, 12 Apr 2026 11:37:14 GMT
+- request:
+    method: get
+    uri: https://sso.senec.com/realms/senec/protocol/openid-connect/auth?client_id=endcustomer-app-frontend&code_challenge=FILTERED_CODE_CHALLENGE&code_challenge_method=S256&redirect_uri=senec-app-auth%3A%2F%2Fkeycloak.prod&response_type=code&scope=roles%20meinsenec
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ruby-senec/0.23.0 (+https://github.com/solectrus/senec)
+      connection:
+      - keep-alive
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 12 Apr 2026 11:37:14 GMT
+      content-type:
+      - text/html;charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, must-revalidate, max-age=0
+      content-language:
+      - en
+      content-security-policy:
+      - frame-src 'self'; frame-ancestors 'self'; object-src 'none';
+      referrer-policy:
+      - no-referrer
+      set-cookie:
+      - AUTH_SESSION_ID=FILTERED_ID;Version=1;Path=/realms/senec/;Secure;HttpOnly;SameSite=None,
+        KC_AUTH_SESSION_HASH=FILTERED_HASH;Version=1;Path=/realms/senec/;Max-Age=60;Secure;SameSite=None,
+        KC_RESTART=FILTERED_RESTART;Version=1;Path=/realms/senec/;Secure;HttpOnly;SameSite=None
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-robots-tag:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      report-to:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Xt5mjgglO%2FwL%2Ft1hSdDt6A7vXpKRt7Bt818usEoBrBWrkujpC%2FMptIHj6gRF6NYJKg1ctqXweXGa3RXNGEAXpzgdjrAdFvC3JPEN4Ym6SfS7Y6CUhqjlO%2BVnirn8lJRl"}]}'
+      server:
+      - cloudflare
+      cf-ray:
+      - 9eb1f019ae181e6c-FRA
+      alt-svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: "    <!DOCTYPE html>\n    <html lang=\"en\">\n\n    <head>\n        <meta
+        charset=\"UTF-8\">\n        <title>\n        Login - SENEC\n        </title>\n
+        \       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n
+        \       <link rel=\"stylesheet\" href=\"/resources/bt6qj/login/senec/css/styles.css?v=2.5\">\n
+        \       <script>\n            const toggle = (button) => {\n                const
+        passwordElement = document.getElementById(button.getAttribute('aria-controls'));\n
+        \               const eye = button.querySelector('.eye-show');\n                const
+        eyeSlash = button.querySelector('.eye-hide');\n\n                if (passwordElement.type
+        === \"password\") {\n                    passwordElement.type = \"text\";\n
+        \                   eye.style.display = \"none\";\n                    eyeSlash.style.display
+        = \"block\";\n                    button.setAttribute(\"aria-label\", button.dataset.labelHide);\n
+        \               } else {\n                    passwordElement.type = \"password\";\n
+        \                   eye.style.display = \"block\";\n                    eyeSlash.style.display
+        = \"none\";\n                    button.setAttribute(\"aria-label\", button.dataset.labelShow);\n
+        \               }\n            }\n            document.addEventListener(\"DOMContentLoaded\",
+        () => {\n                    document.querySelectorAll('[data-password-toggle]')\n
+        \                       .forEach(button => {\n                            button.onclick
+        = () => toggle(button);\n                        });\n                });\n
+        \       </script>\n        <script type=\"importmap\">\n            {\n                \"imports\":
+        {\n                    \"rfc4648\": \"/resources/bt6qj/common/keycloak/vendor/rfc4648/rfc4648.js\"\n
+        \               }\n            }\n        </script>\n        <script type=\"module\">\n
+        \           import { startSessionPolling } from \"/resources/bt6qj/login/senec/js/authChecker.js\";\n\n
+        \           startSessionPolling(\n                \"/realms/senec/login-actions/restart?client_id=endcustomer-app-frontend&tab_id=FILTERED_TAB_ID&client_data=FILTERED_CLIENT_DATA&skip_logout=true\"\n
+        \           );\n        </script>\n        <script type=\"module\">\n            document.addEventListener(\"click\",
+        (event) => {\n                const link = event.target.closest(\"a[data-once-link]\");\n\n
+        \               if (!link) {\n                    return;\n                }\n\n
+        \               if (link.getAttribute(\"aria-disabled\") === \"true\") {\n
+        \                   event.preventDefault();\n                    return;\n
+        \               }\n\n                const { disabledClass } = link.dataset;\n\n
+        \               if (disabledClass) {\n                    link.classList.add(...disabledClass.trim().split(/\\s+/));\n
+        \               }\n\n                link.setAttribute(\"role\", \"link\");\n
+        \               link.setAttribute(\"aria-disabled\", \"true\");\n            });\n
+        \       </script>\n        <script type=\"module\">\n            import {
+        checkAuthSession } from \"/resources/bt6qj/login/senec/js/authChecker.js\";\n\n
+        \           checkAuthSession(\"FILTERED_HASH\");\n        </script>\n    </head>\n\n
+        \   <body>\n        <div class=\"background\">\n            <div class=\"content-container\">\n
+        \               <div class=\"logo-container\">\n                    <img src=\"/resources/bt6qj/login/senec/img/senec-logo-white.png\"
+        alt=\"SENEC Logo\">\n                </div>\n                <div class=\"login-container\">\n
+        \                   <div class=\"login-form\">\n                        <h2>\n
+        \       Sign in to your account\n                        </h2>\n                        <!--
+        Error message handling -->\n            <form id=\"kc-form-login\" onsubmit=\"login.disabled
+        = true; return true;\" action=\"https://sso.senec.com/realms/senec/login-actions/authenticate?session_code=FILTERED_SESSION_CODE&amp;execution=FILTERED_EXECUTION&amp;client_id=endcustomer-app-frontend&amp;tab_id=FILTERED_TAB_ID&amp;client_data=FILTERED_CLIENT_DATA\"
+        method=\"post\">\n                 <div class=\"input-group\">\n                        <input
+        type=\"text\" id=\"username\" name=\"username\" \n                            value=\"\"\n
+        \                           placeholder=\"Enter your email\" autocomplete=\"username\"\n
+        \                           aria-invalid=\"\" dir=\"ltr\">\n                </div>\n
+        \               <div class=\"input-group-wrapper\">\n                    <div
+        class=\"input-group\">\n                        <button type=\"submit\" class=\"custom-button\"
+        name=\"login\" id=\"kc-login\">\n                            Continue\n                        </button>\n
+        \                   </div>\n                    <input type=\"hidden\" id=\"id-hidden-input\"
+        name=\"credentialId\" />\n                </div>\n            </form>\n        <form
+        id=\"webauth\" action=\"https://sso.senec.com/realms/senec/login-actions/authenticate?session_code=FILTERED_SESSION_CODE&amp;execution=FILTERED_EXECUTION&amp;client_id=endcustomer-app-frontend&amp;tab_id=FILTERED_TAB_ID&amp;client_data=FILTERED_CLIENT_DATA\"
+        method=\"post\">\n            <input type=\"hidden\" id=\"clientDataJSON\"
+        name=\"clientDataJSON\"/>\n            <input type=\"hidden\" id=\"authenticatorData\"
+        name=\"authenticatorData\"/>\n            <input type=\"hidden\" id=\"signature\"
+        name=\"signature\"/>\n            <input type=\"hidden\" id=\"credentialId\"
+        name=\"credentialId\"/>\n            <input type=\"hidden\" id=\"userHandle\"
+        name=\"userHandle\"/>\n            <input type=\"hidden\" id=\"error\" name=\"error\"/>\n
+        \       </form>\n        <script type=\"module\">\n           import { authenticateByWebAuthn
+        } from \"/resources/bt6qj/login/senec/js/webauthnAuthenticate.js\";\n           import
+        { initAuthenticate } from \"/resources/bt6qj/login/senec/js/passkeysConditionalAuth.js\";\n\n
+        \          const args = {\n               isUserIdentified : false,\n               challenge
+        : 'XlJp0UCQQrqHCKh6BijJyQ',\n               userVerification : 'required',\n
+        \              rpId : 'sso.senec.com',\n               createTimeout : 0\n
+        \          };\n\n           document.addEventListener(\"DOMContentLoaded\",
+        (event) => initAuthenticate({errmsg : \"Passkey is not supported by this browser.
+        Try another one or contact your administrator.\", ...args}));\n           const
+        authButton = document.getElementById('authenticateWebAuthnButton');\n           if
+        (authButton) {\n               authButton.addEventListener(\"click\", (event)
+        => {\n                   event.preventDefault();\n                   authenticateByWebAuthn({errmsg
+        : \"WebAuthn is not supported by this browser. Try another one or contact
+        your administrator.\", ...args});\n               }, { once: true });\n           }\n
+        \       </script>\n            <div id=\"kc-form-buttons\" class=\"col-xs-12
+        col-sm-12 col-md-12 col-lg-12\">\n                <input id=\"authenticateWebAuthnButton\"
+        type=\"button\" autofocus\n                       value=\"Sign in with Passkey\"\n
+        \                      class=\"custom-button-bordered\"/>\n            </div>\n
+        \               <div class=\"social-login\">\n                </div>\n                    </div>\n
+        \               </div>\n            </div>\n                    <div class=\"footer\">\n
+        \                       <a href=\"https://senec.com/impressum\" class=\"footer-link\"
+        target=\"_blank\">\n                            Imprint</a>\n                        <a
+        href=\"https://senec.com/de/mein-senec-app-datenschutzerklaerung\" class=\"footer-link\"
+        target=\"_blank\">\n                            Data Privacy</a>\n                    </div>\n
+        \       </div>\n    </body>\n\n    </html>\n\n"
+  recorded_at: Sun, 12 Apr 2026 11:37:14 GMT
+- request:
+    method: post
+    uri: https://sso.senec.com/realms/senec/login-actions/authenticate?client_data=FILTERED_CLIENT_DATA&client_id=endcustomer-app-frontend&execution=FILTERED_EXECUTION&session_code=FILTERED_SESSION_CODE&tab_id=FILTERED_TAB_ID
+    body:
+      encoding: US-ASCII
+      string: username=FILTERED_EMAIL
+    headers:
+      User-Agent:
+      - ruby-senec/0.23.0 (+https://github.com/solectrus/senec)
+      connection:
+      - keep-alive
+      cookie:
+      - AUTH_SESSION_ID=FILTERED_ID; KC_AUTH_SESSION_HASH=FILTERED_HASH; KC_RESTART=FILTERED_RESTART
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 12 Apr 2026 11:37:14 GMT
+      content-type:
+      - text/html;charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, must-revalidate, max-age=0
+      content-language:
+      - de
+      content-security-policy:
+      - frame-src 'self'; frame-ancestors 'self'; object-src 'none';
+      referrer-policy:
+      - no-referrer
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-robots-tag:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      report-to:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=HWiPehD%2B4cETz0oE%2B%2BvV41o0%2FMNEDR21COM%2BgWdyT12cZ6HEEkfUR3vHB7fVS8tUsQ%2FNkGMFR7p9eZEtlCDSxZNF%2BsZY3KS9EQC9CfW3Y7sW9reO6Tq7R3KUgGcd2IG5"}]}'
+      server:
+      - cloudflare
+      cf-ray:
+      - 9eb1f01abcabbba1-FRA
+      alt-svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: "    <!DOCTYPE html>\n    <html lang=\"de\">\n\n    <head>\n        <meta
+        charset=\"UTF-8\">\n        <title>\n        Login - SENEC\n        </title>\n
+        \       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n
+        \       <link rel=\"stylesheet\" href=\"/resources/bt6qj/login/senec/css/styles.css?v=2.5\">\n
+        \       <script>\n            const toggle = (button) => {\n                const
+        passwordElement = document.getElementById(button.getAttribute('aria-controls'));\n
+        \               const eye = button.querySelector('.eye-show');\n                const
+        eyeSlash = button.querySelector('.eye-hide');\n\n                if (passwordElement.type
+        === \"password\") {\n                    passwordElement.type = \"text\";\n
+        \                   eye.style.display = \"none\";\n                    eyeSlash.style.display
+        = \"block\";\n                    button.setAttribute(\"aria-label\", button.dataset.labelHide);\n
+        \               } else {\n                    passwordElement.type = \"password\";\n
+        \                   eye.style.display = \"block\";\n                    eyeSlash.style.display
+        = \"none\";\n                    button.setAttribute(\"aria-label\", button.dataset.labelShow);\n
+        \               }\n            }\n            document.addEventListener(\"DOMContentLoaded\",
+        () => {\n                    document.querySelectorAll('[data-password-toggle]')\n
+        \                       .forEach(button => {\n                            button.onclick
+        = () => toggle(button);\n                        });\n                });\n
+        \       </script>\n        <script type=\"importmap\">\n            {\n                \"imports\":
+        {\n                    \"rfc4648\": \"/resources/bt6qj/common/keycloak/vendor/rfc4648/rfc4648.js\"\n
+        \               }\n            }\n        </script>\n        <script type=\"module\">\n
+        \           import { startSessionPolling } from \"/resources/bt6qj/login/senec/js/authChecker.js\";\n\n
+        \           startSessionPolling(\n                \"/realms/senec/login-actions/restart?client_id=endcustomer-app-frontend&tab_id=FILTERED_TAB_ID&client_data=FILTERED_CLIENT_DATA&skip_logout=true\"\n
+        \           );\n        </script>\n        <script type=\"module\">\n            document.addEventListener(\"click\",
+        (event) => {\n                const link = event.target.closest(\"a[data-once-link]\");\n\n
+        \               if (!link) {\n                    return;\n                }\n\n
+        \               if (link.getAttribute(\"aria-disabled\") === \"true\") {\n
+        \                   event.preventDefault();\n                    return;\n
+        \               }\n\n                const { disabledClass } = link.dataset;\n\n
+        \               if (disabledClass) {\n                    link.classList.add(...disabledClass.trim().split(/\\s+/));\n
+        \               }\n\n                link.setAttribute(\"role\", \"link\");\n
+        \               link.setAttribute(\"aria-disabled\", \"true\");\n            });\n
+        \       </script>\n        <script type=\"module\">\n            import {
+        checkAuthSession } from \"/resources/bt6qj/login/senec/js/authChecker.js\";\n\n
+        \           checkAuthSession(\"FILTERED_HASH\");\n        </script>\n    <SCRIPT>
+        if (typeof history.replaceState === 'function') {  history.replaceState({},
+        \"some title\", \"https://sso.senec.com/realms/senec/login-actions/authenticate?execution=FILTERED_EXECUTION&client_id=endcustomer-app-frontend&tab_id=FILTERED_TAB_ID&client_data=FILTERED_CLIENT_DATA\");
+        }</SCRIPT></head>\n\n    <body>\n        <div class=\"background\">\n            <div
+        class=\"content-container\">\n                <div class=\"logo-container\">\n
+        \                   <img src=\"/resources/bt6qj/login/senec/img/senec-logo-white.png\"
+        alt=\"SENEC Logo\">\n                </div>\n                <div class=\"login-container\">\n
+        \                   <div class=\"login-form\">\n                        <h2>\n
+        \       Jetzt anmelden\n                        </h2>\n                        <!--
+        Error message handling -->\n            <form id=\"kc-form-login\" onsubmit=\"login.disabled
+        = true; return true;\" action=\"https://sso.senec.com/realms/senec/login-actions/authenticate?session_code=FILTERED_SESSION_CODE&amp;execution=FILTERED_EXECUTION&amp;client_id=endcustomer-app-frontend&amp;tab_id=FILTERED_TAB_ID&amp;client_data=FILTERED_CLIENT_DATA\"
+        method=\"post\">\n                <div class=\"input-group\">\n                    <input
+        type=\"text\" id=\"username\" name=\"username\"  value=\"FILTERED_EMAIL\"\n
+        \                       placeholder=\"Geben Sie Ihre E-Mail ein\" autocomplete=\"username\"\n
+        \                       aria-invalid=\"\" dir=\"ltr\">\n                </div>\n\n
+        \               <div class=\"input-group\">\n                    <div class=\"password-input-wrapper\">\n
+        \                       <input type=\"password\" id=\"password\" name=\"password\"
+        \n                            placeholder=\"Geben Sie Ihr Passwort ein\"\n
+        \                           autocomplete=\"current-password\" aria-invalid=\"\">\n
+        \                       <button type=\"button\" aria-label=\"Passwort einblenden\"\n
+        \                               aria-controls=\"password\" data-password-toggle>\n
+        \                               <svg class=\"eye-show\" width=\"24\" height=\"24\"
+        viewBox=\"0 0 576 512\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\n
+        \                                 <path d=\"M572.52 241.4C518.29 135.59 410.93
+        64 288 64S57.71 135.59 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41
+        165.07 448 288 448s230.29-71.59 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288
+        400a144 144 0 1 1 144-144 143.84 143.84 0 0 1-144 144zm0-240a95.31 95.31 0
+        0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z\"></path>\n
+        \                               </svg>\n                                <svg
+        class=\"eye-hide\" style=\"display:none; width=\"24\" height=\"24\" viewBox=\"0
+        0 640 512\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\n
+        \                                 <path d=\"M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2
+        185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71
+        376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13
+        0 0 1-26 2.61zm313.82-129.39C585.47 131.09 458.16 64 320 64c-35.07 0-68.65
+        4.41-100.35 12.18l56.88 56.88a144.42 144.42 0 0 1 187.35 187.35l52.32 52.32c38.74-32.12
+        71.42-71.12 87.62-113.34a32.35 32.35 0 0 0 0-29.19zM289.25 214.4l106.35 106.35A47.86
+        47.86 0 0 0 330.12 255a48 48 0 0 0-40.87-40.6zM48 64l544 384-25.41 36L22.59
+        100z\"></path>\n                                </svg>\n                        </button>\n
+        \                   </div>\n                </div>\n                    <div
+        class=\"forgot-password\">\n                        <a href=\"/realms/senec/login-actions/reset-credentials?client_id=endcustomer-app-frontend&amp;tab_id=FILTERED_TAB_ID&amp;client_data=FILTERED_CLIENT_DATA\">\n
+        \                           Passwort vergessen?\n                        </a>\n
+        \                   </div>\n                <div class=\"input-group-wrapper\">\n
+        \                   <div class=\"input-group\">\n                        <button
+        type=\"submit\" class=\"custom-button\" name=\"login\" id=\"kc-login\">\n
+        \                           Anmelden\n                        </button>\n
+        \                   </div>\n                    <input type=\"hidden\" id=\"id-hidden-input\"
+        name=\"credentialId\" />\n                </div>\n            </form>\n                <div
+        class=\"social-login\">\n                            <div class=\"input-group\"
+        style=\"margin-top: 10px;\">\n                                <button type=\"button\"\n
+        \                                       class=\"custom-button\"\n                                        onclick=\"window.location.href='/realms/senec/broker/aad/login?client_id=endcustomer-app-frontend&amp;tab_id=FILTERED_TAB_ID&amp;client_data=FILTERED_CLIENT_DATA&amp;session_code=FILTERED_SESSION_CODE\"\n
+        \                                       style=\"display: flex;\n                                                align-items:
+        center;\n                                                justify-content:
+        center;\n                                                width: 100%;\">\n
+        \                                       <span style=\"margin-right: 8px;\">SENEC
+        AAD</span>\n                                </button>\n                            </div>\n
+        \               </div>\n                    </div>\n                </div>\n
+        \           </div>\n                    <div class=\"footer\">\n                        <a
+        href=\"https://senec.com/impressum\" class=\"footer-link\" target=\"_blank\">\n
+        \                           Impressum</a>\n                        <a href=\"https://senec.com/de/mein-senec-app-datenschutzerklaerung\"
+        class=\"footer-link\" target=\"_blank\">\n                            Datenschutz</a>\n
+        \                   </div>\n        </div>\n    </body>\n\n    </html>\n"
+  recorded_at: Sun, 12 Apr 2026 11:37:14 GMT
+- request:
+    method: post
+    uri: https://sso.senec.com/realms/senec/login-actions/authenticate?client_data=FILTERED_CLIENT_DATA&client_id=endcustomer-app-frontend&execution=FILTERED_EXECUTION&session_code=FILTERED_SESSION_CODE&tab_id=FILTERED_TAB_ID
+    body:
+      encoding: US-ASCII
+      string: username=FILTERED_EMAIL&password=FILTERED_PASSWORD
+    headers:
+      User-Agent:
+      - ruby-senec/0.23.0 (+https://github.com/solectrus/senec)
+      connection:
+      - keep-alive
+      cookie:
+      - AUTH_SESSION_ID=FILTERED_ID; KC_AUTH_SESSION_HASH=FILTERED_HASH; KC_RESTART=FILTERED_RESTART
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      date:
+      - Sun, 12 Apr 2026 11:37:14 GMT
+      content-length:
+      - '0'
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, must-revalidate, max-age=0
+      content-security-policy:
+      - frame-src 'self'; frame-ancestors 'self'; object-src 'none';
+      location:
+      - senec-app-auth://keycloak.prod?session_state=FILTERED_SESSION_STATE&iss=https%3A%2F%2Fsso.senec.com%2Frealms%2Fsenec&code=FILTERED_CODE
+      referrer-policy:
+      - no-referrer
+      set-cookie:
+      - KEYCLOAK_LOCALE=FILTERED_LOCALE;Version=1;Path=/realms/senec/;Secure;HttpOnly;SameSite=None,
+        KC_RESTART=;Version=1;Path=/realms/senec/;Max-Age=0, KEYCLOAK_IDENTITY=FILTERED_IDENTITY;Version=1;Path=/realms/senec/;Secure;HttpOnly;SameSite=None,
+        KEYCLOAK_SESSION=FILTERED_SESSION;Version=1;Path=/realms/senec/;Max-Age=2592000;Secure;SameSite=None
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-robots-tag:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      report-to:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=mYhNyntEbOCkocVFBr%2Fzv0%2FnmQ81HYSfsVc2lsuPsibq90SHY1QcMyoXiD0lui1aAhUS8CYuBGJ8PWoCYWIpMMWnPogFlvsHoVGyv%2BlGMJTfRS1BCiYSVu0llNnV%2BM0c"}]}'
+      nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      server:
+      - cloudflare
+      cf-ray:
+      - 9eb1f01bdb341332-FRA
+      alt-svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sun, 12 Apr 2026 11:37:14 GMT
+- request:
+    method: post
+    uri: https://sso.senec.com/realms/senec/protocol/openid-connect/token
+    body:
+      encoding: UTF-8
+      string: code=FILTERED_CODE&code_verifier=FILTERED_CODE_VERIFIER&grant_type=authorization_code&redirect_uri=senec-app-auth%3A%2F%2Fkeycloak.prod
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - Basic FILTERED_BASIC_TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 12 Apr 2026 11:37:15 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-robots-tag:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      report-to:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=dhnjn%2FCn2%2Fujr0u34Ns9cvq4e6ZfG31pqO33oGCm3dt9EQ6os0FOe3MRnE%2FXM7Wd92O%2F2ztA2MSxxPBVepZ9fQ%2BjO5dxFa99P3Ta3W1EfCOQug546%2BUXkyrA8ciiNMcw"}]}'
+      server:
+      - cloudflare
+      cf-ray:
+      - 9eb1f01d68204d70-FRA
+      alt-svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"FILTERED_ACCESS_TOKEN","expires_in":300,"refresh_expires_in":2591999,"refresh_token":"FILTERED_REFRESH_TOKEN","token_type":"Bearer","not-before-policy":0,"session_state":"FILTERED_SESSION_STATE","scope":"meinsenec
+        roles energy-storage-catalog.products.read app_user_token_exchange_aud touchpoint.read
+        master-data.system.write controller.onlinestate.get pricing-forecast.read
+        senec_impersonate pricing-forecast.write master-data.customer.read app_proxy_aud
+        credentials-types master-data.document.write fpp_gateway_aud master-data.system.read
+        master-data.customer.write master-data.user.read master-data.document.read"}'
+  recorded_at: Sun, 12 Apr 2026 11:37:15 GMT
+- request:
+    method: get
+    uri: https://senec-app-measurements-proxy.prod.senec.dev/v1/systems/999999/measurements?from=2026-02-27T00%3A00%3A00Z&resolution=FIVE_MINUTES&to=2026-02-27T23%3A59%3A59Z
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer FILTERED_BEARER_TOKEN
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      date:
+      - Sun, 12 Apr 2026 11:37:15 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '40114'
+      connection:
+      - keep-alive
+      x-content-type-options:
+      - nosniff
+      x-xss-protection:
+      - '0'
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      x-frame-options:
+      - DENY
+    body:
+      encoding: UTF-8
+      string: '{"timeSeries":[{"date":"2026-02-27T00:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.013671875,0.013671875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T00:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.0185546875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T00:10:00Z","measurements":{"durationInSeconds":600,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T00:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.0146484375,0.0,0.0,0.0,0.0,6.25,0.0]}},{"date":"2026-02-27T00:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.013671875,0.013671875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T00:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.0146484375,0.0,0.0,0.0,0.0,6.25,0.0]}},{"date":"2026-02-27T00:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.013671875,0.0146484375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T00:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.013671875,0.013671875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T00:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.013671875,0.0146484375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T00:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.017578125,0.0,0.0,0.0,0.0,10.00,0.0]}},{"date":"2026-02-27T00:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.01953125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T01:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.0146484375,0.0,0.0,0.0,0.0,6.25,0.0]}},{"date":"2026-02-27T01:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.0146484375,0.0,0.0,0.0,0.0,6.25,0.0]}},{"date":"2026-02-27T01:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.015625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T01:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.0166015625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T01:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.013671875,0.0,0.0,0.0,0.0,12.50,0.0]}},{"date":"2026-02-27T01:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T01:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.0185546875,0.0,0.0,0.0,0.0,5.00,0.0]}},{"date":"2026-02-27T01:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.0205078125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T01:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.0146484375,0.0,0.0,0.0,0.0,6.25,0.0]}},{"date":"2026-02-27T01:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.013671875,0.0146484375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T01:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.0146484375,0.0,0.0,0.0,0.0,6.25,0.0]}},{"date":"2026-02-27T01:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.013671875,0.015625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T02:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.0146484375,0.0,0.0,0.0,0.0,6.25,0.0]}},{"date":"2026-02-27T02:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.013671875,0.0146484375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T02:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.01953125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T02:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.017578125,0.0,0.0,0.0,0.0,10.00,0.0]}},{"date":"2026-02-27T02:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.013671875,0.013671875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T02:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.0166015625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T02:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.0166015625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T02:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T02:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.017578125,0.0,0.0,0.0,0.0,10.00,0.0]}},{"date":"2026-02-27T02:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.0205078125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T02:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.0205078125,0.0,0.0,0.0,0.0,4.55,0.0]}},{"date":"2026-02-27T02:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.021484375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T03:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.0166015625,0.0,0.0,0.0,0.0,15.00,0.0]}},{"date":"2026-02-27T03:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.0185546875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T03:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.033203125,0.0341796875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T03:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.07421875,0.0751953125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T03:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.076171875,0.07421875,0.0,0.0,0.0,0.0,2.56,0.0]}},{"date":"2026-02-27T03:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.025390625,0.0263671875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T03:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.021484375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T03:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.0205078125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T03:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.0166015625,0.0,0.0,0.0,0.0,5.56,0.0]}},{"date":"2026-02-27T03:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.0185546875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T03:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T03:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.0185546875,0.0,0.0,0.0,0.0,5.00,0.0]}},{"date":"2026-02-27T04:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T04:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.0185546875,0.0,0.0,0.0,0.0,5.00,0.0]}},{"date":"2026-02-27T04:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.0234375,0.021484375,0.0,0.0,0.0,0.0,8.33,0.0]}},{"date":"2026-02-27T04:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.0185546875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T04:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.0166015625,0.0,0.0,0.0,0.0,5.56,0.0]}},{"date":"2026-02-27T04:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.01953125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T04:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T04:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.0185546875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T04:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T04:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.01953125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T04:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.025390625,0.0263671875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T04:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.083984375,0.083984375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T05:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.080078125,0.0791015625,0.0,0.0,0.0,0.0,1.22,0.0]}},{"date":"2026-02-27T05:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.095703125,0.0947265625,0.0,0.0,0.0,0.0,1.02,0.0]}},{"date":"2026-02-27T05:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.037109375,0.0361328125,0.0,0.0,0.0,0.0,2.63,0.0]}},{"date":"2026-02-27T05:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.0234375,0.0263671875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T05:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.033203125,0.0322265625,0.0,0.0,0.0,0.0,2.94,0.0]}},{"date":"2026-02-27T05:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.05078125,0.0517578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T05:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.083984375,0.0830078125,0.0,0.0,0.0,0.0,1.16,0.0]}},{"date":"2026-02-27T05:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.0322265625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T05:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.033203125,0.0322265625,0.0,0.0,0.0,0.0,2.94,0.0]}},{"date":"2026-02-27T05:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03515625,0.03515625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T05:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.029296875,0.029296875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T05:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.095703125,0.0947265625,0.0,0.0,0.0,0.0,1.02,0.0]}},{"date":"2026-02-27T06:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.052734375,0.0517578125,0.0,0.0,0.0,0.0,1.85,0.0]}},{"date":"2026-02-27T06:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.025390625,0.025390625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T06:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.0224609375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T06:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.01953125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T06:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.0185546875,0.0,0.0,0.0,0.0,13.64,0.0]}},{"date":"2026-02-27T06:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.0224609375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T06:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.0234375,0.0224609375,0.0,0.0,0.0,0.0,4.17,0.0]}},{"date":"2026-02-27T06:35:00Z","measurements":{"durationInSeconds":300,"values":[0.00390625,0.025390625,0.0205078125,0.0,0.0,0.0,0.0,19.23,0.0]}},{"date":"2026-02-27T06:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0078125,0.025390625,0.0185546875,0.0,0.0,0.0,0.0,26.92,0.0]}},{"date":"2026-02-27T06:45:00Z","measurements":{"durationInSeconds":300,"values":[0.01171875,0.02734375,0.015625,0.0,0.0,0.0,0.0,42.86,0.0]}},{"date":"2026-02-27T06:50:00Z","measurements":{"durationInSeconds":300,"values":[0.015625,0.05859375,0.044921875,0.0,0.0,0.0,0.0,23.33,0.0]}},{"date":"2026-02-27T06:55:00Z","measurements":{"durationInSeconds":300,"values":[0.015625,0.04296875,0.0244140625,0.0,0.0,0.0,0.0,43.18,0.0]}},{"date":"2026-02-27T07:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0234375,0.099609375,0.078125,0.0,0.0,0.0,0.0,21.57,0.0]}},{"date":"2026-02-27T07:05:00Z","measurements":{"durationInSeconds":300,"values":[0.01953125,0.400390625,0.3779296875,0.0,0.0,0.0,0.0,5.61,0.0]}},{"date":"2026-02-27T07:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0234375,0.033203125,0.009765625,0.0,0.0,0.0,0.0,70.59,0.0]}},{"date":"2026-02-27T07:15:00Z","measurements":{"durationInSeconds":300,"values":[0.03125,0.03515625,0.0068359375,0.0,0.0,0.0,0.0,80.56,0.0]}},{"date":"2026-02-27T07:20:00Z","measurements":{"durationInSeconds":300,"values":[0.02734375,0.033203125,0.0029296875,0.0,0.0,0.0,0.0,91.18,0.0]}},{"date":"2026-02-27T07:25:00Z","measurements":{"durationInSeconds":300,"values":[0.03515625,0.03515625,0.0,0.001953125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T07:30:00Z","measurements":{"durationInSeconds":300,"values":[0.04296875,0.03515625,0.0009765625,0.00390625,0.0,0.0,0.0,97.22,0.0]}},{"date":"2026-02-27T07:35:00Z","measurements":{"durationInSeconds":300,"values":[0.046875,0.041015625,0.0,0.0078125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T07:40:00Z","measurements":{"durationInSeconds":300,"values":[0.05859375,0.13671875,0.0927734375,0.013671875,0.0,0.0,0.0,32.14,0.0]}},{"date":"2026-02-27T07:45:00Z","measurements":{"durationInSeconds":300,"values":[0.05859375,0.03515625,0.0009765625,0.021484375,0.0,0.0,0.0,97.22,0.0]}},{"date":"2026-02-27T07:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0703125,0.06640625,0.00390625,0.009765625,0.0,0.0,0.0,94.12,0.0]}},{"date":"2026-02-27T07:55:00Z","measurements":{"durationInSeconds":300,"values":[0.078125,0.09765625,0.017578125,0.0,0.0,0.0,0.0,82.00,0.0]}},{"date":"2026-02-27T08:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0859375,0.08984375,0.0068359375,0.0,0.0,0.0,0.0,92.39,0.0]}},{"date":"2026-02-27T08:05:00Z","measurements":{"durationInSeconds":300,"values":[0.09765625,0.068359375,0.0029296875,0.033203125,0.0,0.0,0.0,95.71,0.0]}},{"date":"2026-02-27T08:10:00Z","measurements":{"durationInSeconds":300,"values":[0.1171875,0.04296875,0.0009765625,0.07421875,0.0,0.0,0.0,97.73,0.0]}},{"date":"2026-02-27T08:15:00Z","measurements":{"durationInSeconds":300,"values":[0.1328125,0.037109375,0.0,0.095703125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T08:20:00Z","measurements":{"durationInSeconds":300,"values":[0.14453125,0.0390625,0.0,0.10546875,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T08:25:00Z","measurements":{"durationInSeconds":300,"values":[0.15625,0.0390625,0.0,0.1171875,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T08:30:00Z","measurements":{"durationInSeconds":300,"values":[0.17578125,0.03125,0.0,0.140625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T08:35:00Z","measurements":{"durationInSeconds":300,"values":[0.1875,0.064453125,0.0,0.126953125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T08:40:00Z","measurements":{"durationInSeconds":300,"values":[0.20703125,0.041015625,0.0,0.16796875,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T08:45:00Z","measurements":{"durationInSeconds":300,"values":[0.2265625,0.041015625,0.0,0.185546875,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T08:50:00Z","measurements":{"durationInSeconds":300,"values":[0.26171875,0.0625,0.0,0.197265625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T08:55:00Z","measurements":{"durationInSeconds":300,"values":[0.296875,0.1171875,0.0,0.181640625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T09:00:00Z","measurements":{"durationInSeconds":300,"values":[0.35546875,0.08984375,0.0,0.263671875,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T09:05:00Z","measurements":{"durationInSeconds":300,"values":[0.21484375,0.123046875,0.0,0.095703125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T09:10:00Z","measurements":{"durationInSeconds":300,"values":[0.25390625,0.138671875,0.0,0.111328125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T09:15:00Z","measurements":{"durationInSeconds":300,"values":[0.20703125,0.138671875,0.0,0.0703125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T09:20:00Z","measurements":{"durationInSeconds":300,"values":[0.12109375,0.234375,0.1162109375,0.00390625,0.0,0.0,0.0,50.42,0.0]}},{"date":"2026-02-27T09:25:00Z","measurements":{"durationInSeconds":300,"values":[0.09765625,0.22265625,0.1240234375,0.0,0.0,0.0,0.0,44.30,0.0]}},{"date":"2026-02-27T09:30:00Z","measurements":{"durationInSeconds":300,"values":[0.08203125,0.134765625,0.0576171875,0.0,0.0,0.0,0.0,57.25,0.0]}},{"date":"2026-02-27T09:35:00Z","measurements":{"durationInSeconds":300,"values":[0.12109375,0.17578125,0.0537109375,0.001953125,0.0,0.0,0.0,69.44,0.0]}},{"date":"2026-02-27T09:40:00Z","measurements":{"durationInSeconds":300,"values":[0.3203125,0.330078125,0.0478515625,0.0390625,0.0,0.0,0.0,85.50,0.0]}},{"date":"2026-02-27T09:45:00Z","measurements":{"durationInSeconds":300,"values":[0.26953125,0.21484375,0.0595703125,0.111328125,0.0,0.0,0.0,72.27,0.0]}},{"date":"2026-02-27T09:50:00Z","measurements":{"durationInSeconds":300,"values":[0.41796875,0.166015625,0.0,0.251953125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T09:55:00Z","measurements":{"durationInSeconds":300,"values":[0.3984375,0.166015625,0.0,0.234375,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T10:00:00Z","measurements":{"durationInSeconds":300,"values":[0.47265625,0.251953125,0.0,0.224609375,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T10:05:00Z","measurements":{"durationInSeconds":300,"values":[0.49609375,0.33984375,0.0,0.15625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T10:10:00Z","measurements":{"durationInSeconds":300,"values":[0.44140625,0.17578125,0.0,0.259765625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T10:15:00Z","measurements":{"durationInSeconds":300,"values":[0.453125,0.00390625,0.0009765625,0.05859375,0.0,0.0,0.0,75.00,0.0]}},{"date":"2026-02-27T10:20:00Z","measurements":{"durationInSeconds":300,"values":[0.46875,0.0,0.0,0.048828125,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T10:25:00Z","measurements":{"durationInSeconds":300,"values":[0.51171875,0.0,0.0,0.08984375,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T10:30:00Z","measurements":{"durationInSeconds":300,"values":[0.5,0.0,0.0,0.072265625,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T10:35:00Z","measurements":{"durationInSeconds":300,"values":[0.48046875,0.0,0.0,0.060546875,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T10:40:00Z","measurements":{"durationInSeconds":300,"values":[0.48828125,0.0,0.0,0.06640625,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T10:45:00Z","measurements":{"durationInSeconds":300,"values":[0.32421875,0.0,0.11328125,0.025390625,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T10:50:00Z","measurements":{"durationInSeconds":300,"values":[0.21484375,0.0,0.189453125,0.0,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T10:55:00Z","measurements":{"durationInSeconds":300,"values":[0.484375,0.091796875,0.068359375,0.0,0.0,0.0,0.0,25.53,0.0]}},{"date":"2026-02-27T11:00:00Z","measurements":{"durationInSeconds":300,"values":[0.53515625,0.115234375,0.0576171875,0.0,0.0,0.0,0.0,50.00,0.0]}},{"date":"2026-02-27T11:05:00Z","measurements":{"durationInSeconds":300,"values":[0.51953125,0.052734375,0.033203125,0.0546875,0.0,0.0,0.0,37.04,0.0]}},{"date":"2026-02-27T11:10:00Z","measurements":{"durationInSeconds":300,"values":[0.52734375,0.0,0.0,0.10546875,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T11:15:00Z","measurements":{"durationInSeconds":300,"values":[0.53125,0.0,0.0,0.115234375,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T11:20:00Z","measurements":{"durationInSeconds":300,"values":[0.54296875,0.0,0.0,0.052734375,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T11:25:00Z","measurements":{"durationInSeconds":300,"values":[0.55859375,0.001953125,0.0,0.056640625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T11:30:00Z","measurements":{"durationInSeconds":300,"values":[0.55078125,0.001953125,0.0,0.033203125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T11:35:00Z","measurements":{"durationInSeconds":300,"values":[0.57421875,0.005859375,0.0009765625,0.05078125,0.0,0.0,0.0,83.33,0.0]}},{"date":"2026-02-27T11:40:00Z","measurements":{"durationInSeconds":300,"values":[0.62890625,0.009765625,0.0,0.09375,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T11:45:00Z","measurements":{"durationInSeconds":300,"values":[0.609375,0.01171875,0.0,0.0625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T11:50:00Z","measurements":{"durationInSeconds":300,"values":[0.6015625,0.017578125,0.0009765625,0.013671875,0.0,0.0,0.0,94.44,0.0]}},{"date":"2026-02-27T11:55:00Z","measurements":{"durationInSeconds":300,"values":[0.59765625,0.015625,0.0009765625,0.013671875,0.0,0.0,0.0,93.75,0.0]}},{"date":"2026-02-27T12:00:00Z","measurements":{"durationInSeconds":300,"values":[0.62109375,0.009765625,0.0,0.0625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T12:05:00Z","measurements":{"durationInSeconds":300,"values":[0.4765625,0.0078125,0.0859375,0.013671875,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T12:10:00Z","measurements":{"durationInSeconds":300,"values":[0.57421875,0.009765625,0.0380859375,0.009765625,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T12:15:00Z","measurements":{"durationInSeconds":300,"values":[0.33203125,0.0,0.1064453125,0.03125,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T12:20:00Z","measurements":{"durationInSeconds":300,"values":[0.5546875,0.009765625,0.0244140625,0.0390625,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T12:25:00Z","measurements":{"durationInSeconds":300,"values":[0.58203125,0.0,0.0009765625,0.1640625,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T12:30:00Z","measurements":{"durationInSeconds":300,"values":[0.51171875,0.00390625,0.048828125,0.0390625,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T12:35:00Z","measurements":{"durationInSeconds":300,"values":[0.609375,0.01171875,0.0087890625,0.064453125,0.0,0.0,0.0,25.00,0.0]}},{"date":"2026-02-27T12:40:00Z","measurements":{"durationInSeconds":300,"values":[0.58203125,0.0,0.0029296875,0.158203125,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T12:45:00Z","measurements":{"durationInSeconds":300,"values":[0.59765625,0.041015625,0.0068359375,0.126953125,0.0,0.0,0.0,83.33,0.0]}},{"date":"2026-02-27T12:50:00Z","measurements":{"durationInSeconds":300,"values":[0.58984375,0.1328125,0.0986328125,0.01171875,0.0,0.0,0.0,25.74,0.0]}},{"date":"2026-02-27T12:55:00Z","measurements":{"durationInSeconds":300,"values":[0.57421875,0.087890625,0.0244140625,0.052734375,0.0,0.0,0.0,72.22,0.0]}},{"date":"2026-02-27T13:00:00Z","measurements":{"durationInSeconds":300,"values":[0.5703125,0.0390625,0.0,0.09375,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T13:05:00Z","measurements":{"durationInSeconds":300,"values":[0.57421875,0.044921875,0.0009765625,0.087890625,0.0,0.0,0.0,97.83,0.0]}},{"date":"2026-02-27T13:10:00Z","measurements":{"durationInSeconds":300,"values":[0.56640625,0.0,0.0,0.080078125,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T13:15:00Z","measurements":{"durationInSeconds":600,"values":[0.546875,0.001953125,0.005859375,0.0625,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T13:25:00Z","measurements":{"durationInSeconds":300,"values":[0.57421875,0.00390625,0.0,0.025390625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T13:30:00Z","measurements":{"durationInSeconds":300,"values":[0.4375,0.001953125,0.1005859375,0.0234375,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T13:35:00Z","measurements":{"durationInSeconds":300,"values":[0.55859375,0.001953125,0.021484375,0.083984375,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T13:40:00Z","measurements":{"durationInSeconds":300,"values":[0.58203125,0.0,0.0,0.166015625,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T13:45:00Z","measurements":{"durationInSeconds":300,"values":[0.54296875,0.005859375,0.0068359375,0.01953125,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T13:50:00Z","measurements":{"durationInSeconds":300,"values":[0.53125,0.005859375,0.0185546875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T13:55:00Z","measurements":{"durationInSeconds":300,"values":[0.47265625,0.001953125,0.0517578125,0.0078125,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T14:00:00Z","measurements":{"durationInSeconds":300,"values":[0.52734375,0.0,0.0009765625,0.04296875,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T14:05:00Z","measurements":{"durationInSeconds":300,"values":[0.51953125,0.0,0.0,0.109375,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T14:10:00Z","measurements":{"durationInSeconds":300,"values":[0.51953125,0.001953125,0.0,0.03125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T14:15:00Z","measurements":{"durationInSeconds":300,"values":[0.5078125,0.0,0.0,0.025390625,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T14:20:00Z","measurements":{"durationInSeconds":300,"values":[0.50390625,0.0,0.0,0.087890625,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T14:25:00Z","measurements":{"durationInSeconds":300,"values":[0.48828125,0.0,0.0,0.080078125,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T14:30:00Z","measurements":{"durationInSeconds":300,"values":[0.48828125,0.0,0.0,0.068359375,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T14:35:00Z","measurements":{"durationInSeconds":300,"values":[0.47265625,0.0,0.001953125,0.056640625,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T14:40:00Z","measurements":{"durationInSeconds":300,"values":[0.3515625,0.0,0.0830078125,0.02734375,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T14:45:00Z","measurements":{"durationInSeconds":300,"values":[0.4609375,0.0,0.0,0.048828125,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T14:50:00Z","measurements":{"durationInSeconds":300,"values":[0.4453125,0.037109375,0.0439453125,0.025390625,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T14:55:00Z","measurements":{"durationInSeconds":300,"values":[0.4375,0.0,0.0,0.021484375,0.0,0.0,0.0,100,0.0]}},{"date":"2026-02-27T15:00:00Z","measurements":{"durationInSeconds":300,"values":[0.4140625,0.06640625,0.0,0.345703125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T15:05:00Z","measurements":{"durationInSeconds":300,"values":[0.40625,0.087890625,0.0,0.318359375,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T15:10:00Z","measurements":{"durationInSeconds":300,"values":[0.39453125,0.08984375,0.0,0.306640625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T15:15:00Z","measurements":{"durationInSeconds":300,"values":[0.37890625,0.083984375,0.0,0.291015625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T15:20:00Z","measurements":{"durationInSeconds":300,"values":[0.30078125,0.072265625,0.0,0.228515625,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T15:25:00Z","measurements":{"durationInSeconds":300,"values":[0.14453125,0.064453125,0.0126953125,0.095703125,0.0,0.0,0.0,80.30,0.0]}},{"date":"2026-02-27T15:30:00Z","measurements":{"durationInSeconds":300,"values":[0.18359375,0.072265625,0.0078125,0.119140625,0.0,0.0,0.0,89.19,0.0]}},{"date":"2026-02-27T15:35:00Z","measurements":{"durationInSeconds":300,"values":[0.2265625,0.072265625,0.005859375,0.15625,0.0,0.0,0.0,91.89,0.0]}},{"date":"2026-02-27T15:40:00Z","measurements":{"durationInSeconds":300,"values":[0.171875,0.0703125,0.005859375,0.11328125,0.0,0.0,0.0,91.67,0.0]}},{"date":"2026-02-27T15:45:00Z","measurements":{"durationInSeconds":300,"values":[0.26171875,0.06640625,0.0009765625,0.19140625,0.0,0.0,0.0,98.53,0.0]}},{"date":"2026-02-27T15:50:00Z","measurements":{"durationInSeconds":300,"values":[0.140625,0.048828125,0.0048828125,0.09765625,0.0,0.0,0.0,90.00,0.0]}},{"date":"2026-02-27T15:55:00Z","measurements":{"durationInSeconds":300,"values":[0.12109375,0.064453125,0.01953125,0.076171875,0.0,0.0,0.0,69.70,0.0]}},{"date":"2026-02-27T16:00:00Z","measurements":{"durationInSeconds":300,"values":[0.14453125,0.080078125,0.0146484375,0.080078125,0.0,0.0,0.0,81.71,0.0]}},{"date":"2026-02-27T16:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0546875,0.05859375,0.0224609375,0.01953125,0.0,0.0,0.0,61.67,0.0]}},{"date":"2026-02-27T16:10:00Z","measurements":{"durationInSeconds":300,"values":[0.03515625,0.06640625,0.037109375,0.00390625,0.0,0.0,0.0,44.12,0.0]}},{"date":"2026-02-27T16:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0234375,0.02734375,0.0009765625,0.0,0.0,0.0,0.0,96.43,0.0]}},{"date":"2026-02-27T16:20:00Z","measurements":{"durationInSeconds":300,"values":[0.02734375,0.0234375,0.0009765625,0.001953125,0.0,0.0,0.0,95.83,0.0]}},{"date":"2026-02-27T16:25:00Z","measurements":{"durationInSeconds":300,"values":[0.02734375,0.0234375,0.0,0.001953125,0.0,0.0,0.0,100.00,0.0]}},{"date":"2026-02-27T16:30:00Z","measurements":{"durationInSeconds":300,"values":[0.01953125,0.02734375,0.0048828125,0.0,0.0,0.0,0.0,82.14,0.0]}},{"date":"2026-02-27T16:35:00Z","measurements":{"durationInSeconds":300,"values":[0.01953125,0.02734375,0.0078125,0.0,0.0,0.0,0.0,71.43,0.0]}},{"date":"2026-02-27T16:40:00Z","measurements":{"durationInSeconds":300,"values":[0.01953125,0.025390625,0.009765625,0.0,0.0,0.0,0.0,61.54,0.0]}},{"date":"2026-02-27T16:45:00Z","measurements":{"durationInSeconds":300,"values":[0.01171875,0.025390625,0.0107421875,0.0,0.0,0.0,0.0,57.69,0.0]}},{"date":"2026-02-27T16:50:00Z","measurements":{"durationInSeconds":300,"values":[0.01171875,0.0234375,0.013671875,0.0,0.0,0.0,0.0,41.67,0.0]}},{"date":"2026-02-27T16:55:00Z","measurements":{"durationInSeconds":300,"values":[0.00390625,0.025390625,0.0185546875,0.0,0.0,0.0,0.0,26.92,0.0]}},{"date":"2026-02-27T17:00:00Z","measurements":{"durationInSeconds":300,"values":[0.00390625,0.02734375,0.0234375,0.0,0.0,0.0,0.0,14.29,0.0]}},{"date":"2026-02-27T17:05:00Z","measurements":{"durationInSeconds":300,"values":[0.00390625,0.0234375,0.0234375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T17:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.0234375,0.0205078125,0.0,0.0,0.0,0.0,12.50,0.0]}},{"date":"2026-02-27T17:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.021484375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T17:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.0205078125,0.0,0.0,0.0,0.0,4.55,0.0]}},{"date":"2026-02-27T17:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.021484375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T17:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.02734375,0.02734375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T17:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.029296875,0.02734375,0.0,0.0,0.0,0.0,6.67,0.0]}},{"date":"2026-02-27T17:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.03125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T17:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.080078125,0.0810546875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T17:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.033203125,0.0322265625,0.0,0.0,0.0,0.0,2.94,0.0]}},{"date":"2026-02-27T17:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.037109375,0.0390625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T18:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.0390625,0.0390625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T18:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.0390625,0.0361328125,0.0,0.0,0.0,0.0,7.50,0.0]}},{"date":"2026-02-27T18:10:00Z","measurements":{"durationInSeconds":600,"values":[0.0,0.078125,0.08203125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T18:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.029296875,0.0,0.0,0.0,0.0,6.25,0.0]}},{"date":"2026-02-27T18:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.02734375,0.0263671875,0.0,0.0,0.0,0.0,3.57,0.0]}},{"date":"2026-02-27T18:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.0390625,0.0400390625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T18:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03515625,0.033203125,0.0,0.0,0.0,0.0,5.56,0.0]}},{"date":"2026-02-27T18:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.02734375,0.02734375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T18:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.02734375,0.0302734375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T18:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.03125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T18:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.029296875,0.029296875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T19:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03515625,0.0341796875,0.0,0.0,0.0,0.0,2.78,0.0]}},{"date":"2026-02-27T19:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.029296875,0.029296875,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T19:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.0322265625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T19:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.02734375,0.02734375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T19:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.029296875,0.0,0.0,0.0,0.0,6.25,0.0]}},{"date":"2026-02-27T19:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.02734375,0.02734375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T19:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.033203125,0.0322265625,0.0,0.0,0.0,0.0,2.94,0.0]}},{"date":"2026-02-27T19:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.02734375,0.0302734375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T19:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.03125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T19:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.029296875,0.0283203125,0.0,0.0,0.0,0.0,3.33,0.0]}},{"date":"2026-02-27T19:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.025390625,0.02734375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T19:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.033203125,0.03125,0.0,0.0,0.0,0.0,5.88,0.0]}},{"date":"2026-02-27T20:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03515625,0.0361328125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T20:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.033203125,0.0322265625,0.0,0.0,0.0,0.0,2.94,0.0]}},{"date":"2026-02-27T20:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.029296875,0.0302734375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T20:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.0302734375,0.0,0.0,0.0,0.0,3.13,0.0]}},{"date":"2026-02-27T20:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.033203125,0.0322265625,0.0,0.0,0.0,0.0,2.94,0.0]}},{"date":"2026-02-27T20:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.033203125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T20:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.037109375,0.037109375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T20:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.0390625,0.037109375,0.0,0.0,0.0,0.0,5.00,0.0]}},{"date":"2026-02-27T20:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.033203125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T20:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.0322265625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T20:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.03125,0.029296875,0.0,0.0,0.0,0.0,6.25,0.0]}},{"date":"2026-02-27T20:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.033203125,0.03125,0.0,0.0,0.0,0.0,5.88,0.0]}},{"date":"2026-02-27T21:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.10546875,0.1083984375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T21:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.029296875,0.02734375,0.0,0.0,0.0,0.0,6.67,0.0]}},{"date":"2026-02-27T21:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.02734375,0.02734375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T21:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.0234375,0.0244140625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T21:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.0166015625,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T21:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.0166015625,0.0,0.0,0.0,0.0,5.56,0.0]}},{"date":"2026-02-27T21:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T21:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.0185546875,0.0,0.0,0.0,0.0,5.00,0.0]}},{"date":"2026-02-27T21:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.0234375,0.0224609375,0.0,0.0,0.0,0.0,4.17,0.0]}},{"date":"2026-02-27T21:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.0205078125,0.0,0.0,0.0,0.0,4.55,0.0]}},{"date":"2026-02-27T21:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T21:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.0185546875,0.0,0.0,0.0,0.0,5.00,0.0]}},{"date":"2026-02-27T22:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T22:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.01953125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T22:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.0234375,0.0224609375,0.0,0.0,0.0,0.0,4.17,0.0]}},{"date":"2026-02-27T22:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.0224609375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T22:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.01953125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T22:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T22:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.015625,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T22:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.017578125,0.0,0.0,0.0,0.0,10.00,0.0]}},{"date":"2026-02-27T22:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.01953125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T22:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.021484375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T22:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.021484375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T22:55:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.0166015625,0.0,0.0,0.0,0.0,5.56,0.0]}},{"date":"2026-02-27T23:00:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T23:05:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T23:10:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T23:15:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.021484375,0.0205078125,0.0,0.0,0.0,0.0,4.55,0.0]}},{"date":"2026-02-27T23:20:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.0234375,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T23:25:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.01953125,0.017578125,0.0,0.0,0.0,0.0,10.00,0.0]}},{"date":"2026-02-27T23:30:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T23:35:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T23:40:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.017578125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T23:45:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.017578125,0.01953125,0.0,0.0,0.0,0.0,0.00,0.0]}},{"date":"2026-02-27T23:50:00Z","measurements":{"durationInSeconds":300,"values":[0.0,0.025390625,0.0224609375,0.0,0.0,0.0,0.0,11.54,0.0]}},{"date":"2026-02-27T23:55:00Z","measurements":{"durationInSeconds":299,"values":[0.0,0.021484375,0.021484375,0.0,0.0,0.0,0.0,0.00,0.0]}}],"measurements":["POWER_GENERATION","POWER_CONSUMPTION","GRID_IMPORT","GRID_EXPORT","BATTERY_IMPORT","BATTERY_EXPORT","BATTERY_LEVEL_IN_PERCENT","AUTARKY_IN_PERCENT","WALLBOX_CONSUMPTION"],"electricVehicleConnected":false}'
+  recorded_at: Sun, 12 Apr 2026 11:37:15 GMT
+recorded_with: VCR 6.4.0

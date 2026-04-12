@@ -76,6 +76,22 @@ module Senec
         post "#{WALLBOX_HOST}/v1/systems/wallboxes/search", { systemIds: [system_id] }
       end
 
+      def measurements(system_id, resolution:, from:, to:)
+        params = URI.encode_www_form(
+          resolution:,
+          from: from.strftime('%Y-%m-%dT%H:%M:%SZ'),
+          to: to.strftime('%Y-%m-%dT%H:%M:%SZ'),
+        )
+
+        get "#{MEASUREMENTS_HOST}/v1/systems/#{system_id}/measurements?#{params}"
+      end
+
+      def data_availability(system_id, timezone:)
+        params = URI.encode_www_form(timezone:)
+
+        get "#{MEASUREMENTS_HOST}/v1/systems/#{system_id}/data-availability/timespan?#{params}"
+      end
+
       private
 
       attr_accessor :oauth_token

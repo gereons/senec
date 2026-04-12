@@ -195,6 +195,87 @@ RSpec.describe Senec::Cloud::Connection, :cloud, :vcr do
     end
   end
 
+  describe '#measurements' do
+    subject(:measurements) do
+      connection.measurements(
+        system_id,
+        resolution: 'FIVE_MINUTES',
+        from: Time.new(2026, 2, 27, 0, 0, 0, '+01:00'),
+        to: Time.new(2026, 2, 27, 23, 59, 59, '+01:00'),
+      )
+    end
+
+    before { connection.authenticate! }
+
+    context 'with valid system_id', vcr: 'cloud/measurements' do
+      let(:system_id) { ENV.fetch('SENEC_SYSTEM_ID') }
+
+      it { is_expected.to be_a(Hash) }
+
+      it 'returns time series data' do
+        expect(measurements.keys).to include('timeSeries', 'measurements')
+      end
+
+      it 'returns measurement names' do
+        expect(measurements['measurements']).to include(
+          'POWER_GENERATION',
+          'POWER_CONSUMPTION',
+          'GRID_IMPORT',
+          'GRID_EXPORT',
+          'BATTERY_IMPORT',
+          'BATTERY_EXPORT',
+          'BATTERY_LEVEL_IN_PERCENT',
+        )
+      end
+
+      it 'returns time series entries with values' do
+        entry = measurements['timeSeries'].first
+        expect(entry).to include('date', 'measurements')
+        expect(entry['measurements']).to include('durationInSeconds', 'values')
+      end
+    end
+
+    context 'with invalid system_id', vcr: 'cloud/measurements-invalid-id' do
+      let(:system_id) { '12345' }
+
+      it 'returns nil' do
+        expect(measurements).to be_nil
+      end
+    end
+  end
+
+  describe '#data_availability' do
+    subject(:data_availability) { connection.data_availability(system_id, timezone: 'Europe/Berlin') }
+
+    before { connection.authenticate! }
+
+    context 'with valid system_id', vcr: 'cloud/data-availability' do
+      let(:system_id) { ENV.fetch('SENEC_SYSTEM_ID') }
+
+      it { is_expected.to be_a(Hash) }
+
+      it 'returns period timestamps' do
+        expect(data_availability.keys).to include(
+          'periodStartDateInMilliseconds',
+          'periodEndDateInMilliseconds',
+        )
+      end
+
+      it 'returns numeric timestamps' do
+        expect(data_availability['periodStartDateInMilliseconds']).to be_a(Integer)
+        expect(data_availability['periodEndDateInMilliseconds']).to be_a(Integer)
+      end
+    end
+
+    context 'with invalid system_id', vcr: 'cloud/data-availability-invalid-id' do
+      let(:system_id) { '12345' }
+
+      it 'returns nil' do
+        expect(data_availability).to be_nil
+      end
+    end
+  end
+
   describe 'token refresh behavior' do
     subject(:response) { connection.systems }
 
