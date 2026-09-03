@@ -229,10 +229,10 @@ module Senec
         response = oauth_token.get(url)
         JSON.parse(response.body)
       rescue StandardError => e
-        # :nocov:
+        # simplecov:disable
         warn "API error: #{e.message}"
         nil
-        # :nocov:
+        # simplecov:enable
       end
 
       def post(url, data)
@@ -246,10 +246,10 @@ module Senec
 
         JSON.parse(response.body)
       rescue StandardError => e
-        # :nocov:
+        # simplecov:disable
         warn "API error: #{e.message}"
         nil
-        # :nocov:
+        # simplecov:enable
       end
 
       def http_request(method, url, data: nil)
@@ -277,9 +277,9 @@ module Senec
       def openid_config
         @openid_config ||= JSON.parse(http_request(:get, CONFIG_URL).body)
       rescue StandardError => e
-        # :nocov:
+        # simplecov:disable
         raise "Failed to load OpenID configuration: #{e.message}"
-        # :nocov:
+        # simplecov:enable
       end
 
       def cookies

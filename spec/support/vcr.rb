@@ -145,7 +145,7 @@ VCR.configure do |config|
   end
 
   # Use before_record hook to sanitize all sensitive data
-  # :nocov:
+  # simplecov:disable
   config.before_record do |interaction|
     filter_request_data(interaction.request)
     filter_response_data(interaction.response)
@@ -197,7 +197,7 @@ VCR.configure do |config|
 
     Array(array_data).map! { |item| apply_filters(item, *filter_types) }
   end
-  # :nocov:
+  # simplecov:enable
 end
 
 # Disable VCR when a WebMock stub is created
