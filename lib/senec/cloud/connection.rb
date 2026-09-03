@@ -8,7 +8,7 @@ module Senec
 
     CLIENT_ID = 'endcustomer-app-frontend'.freeze
     REDIRECT_URI = 'senec-app-auth://keycloak.prod'.freeze
-    SCOPE = 'roles meinsenec'.freeze
+    SCOPE = 'roles profile meinsenec'.freeze
 
     SYSTEMS_HOST = 'https://senec-app-systems-proxy.prod.senec.dev'.freeze
     MEASUREMENTS_HOST = 'https://senec-app-measurements-proxy.prod.senec.dev'.freeze
@@ -57,23 +57,23 @@ module Senec
       end
 
       def systems
-        get "#{SYSTEMS_HOST}/v1/systems"
+        get "#{SYSTEMS_HOST}/systems/api/v1"
       end
 
       def system_details(system_id)
-        get "#{SYSTEMS_HOST}/systems/#{system_id}/details"
+        get "#{SYSTEMS_HOST}/systems/api/v1/#{system_id}/details"
       end
 
       def dashboard(system_id)
-        get "#{MEASUREMENTS_HOST}/v1/systems/#{system_id}/dashboard"
+        get "#{MEASUREMENTS_HOST}/measurements/api/v1/systems/#{system_id}/dashboard"
       end
 
       def wallbox(system_id, wallbox_id)
-        get "#{WALLBOX_HOST}/v1/systems/#{system_id}/wallboxes/#{wallbox_id}"
+        get "#{WALLBOX_HOST}/wallbox/api/v1/systems/#{system_id}/wallboxes/#{wallbox_id}"
       end
 
       def wallbox_search(system_id)
-        post "#{WALLBOX_HOST}/v1/systems/wallboxes/search", { systemIds: [system_id] }
+        post "#{WALLBOX_HOST}/wallbox/api/v1/systems/wallboxes/search", { systemIds: [system_id] }
       end
 
       def measurements(system_id, resolution:, from:, to:)
@@ -83,13 +83,13 @@ module Senec
           to: to.strftime('%Y-%m-%dT%H:%M:%SZ'),
         )
 
-        get "#{MEASUREMENTS_HOST}/v1/systems/#{system_id}/measurements?#{params}"
+        get "#{MEASUREMENTS_HOST}/measurements/api/v1/systems/#{system_id}/measurements?#{params}"
       end
 
       def data_availability(system_id, timezone:)
         params = URI.encode_www_form(timezone:)
 
-        get "#{MEASUREMENTS_HOST}/v1/systems/#{system_id}/data-availability/timespan?#{params}"
+        get "#{MEASUREMENTS_HOST}/measurements/api/v1/systems/#{system_id}/data-availability/timespan?#{params}"
       end
 
       private

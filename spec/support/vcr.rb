@@ -50,7 +50,7 @@ FILTERS = {
     **json_string_filters('access_token', 'refresh_token', 'session_state')
   },
   uri_system_ids: {
-    %r{/systems/\d+/} => '/systems/999999/'
+    %r{(?<prefix>/systems/(?:api/v1/)?)\d+/} => '\k<prefix>999999/'
   },
   personal_data: {
     /username=[^&]+&password=[^&]+/ =>
@@ -101,7 +101,7 @@ def normalize_oauth_secrets(uri_string)
 end
 
 def normalize_system_ids(uri_string)
-  uri_string.gsub(%r{/systems/\d+/}, '/systems/999999/')
+  uri_string.gsub(%r{(?<prefix>/systems/(?:api/v1/)?)\d+/}, '\k<prefix>999999/')
 end
 
 VCR.configure do |config|

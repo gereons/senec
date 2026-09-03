@@ -41,7 +41,7 @@ http_interactions:
   recorded_at: Wed, 06 Aug 2025 06:52:01 GMT
 - request:
     method: get
-    uri: https://sso.senec.com/realms/senec/protocol/openid-connect/auth?client_id=endcustomer-app-frontend&code_challenge=FILTERED_CODE_CHALLENGE&code_challenge_method=S256&redirect_uri=senec-app-auth%3A%2F%2Fkeycloak.prod&response_type=code&scope=roles%20meinsenec
+    uri: https://sso.senec.com/realms/senec/protocol/openid-connect/auth?client_id=endcustomer-app-frontend&code_challenge=FILTERED_CODE_CHALLENGE&code_challenge_method=S256&redirect_uri=senec-app-auth%3A%2F%2Fkeycloak.prod&response_type=code&scope=roles%20profile%20meinsenec
     body:
       encoding: US-ASCII
       string: ''
